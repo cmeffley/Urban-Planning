@@ -8,6 +8,7 @@ namespace Urban_Planning.Planner
 {
     class Building
     {
+        public string Name { get; set; }
         public int Stories { get; set; }
         public double Width { get; set; }
         public double Depth { get; set; }
@@ -19,9 +20,10 @@ namespace Urban_Planning.Planner
         string _address;
         string _owner;
 
-        public Building(string address)
+        public Building(string name, string address)
         {
             _address = address;
+            Name = name;
         }
 
         public void Construct()
@@ -30,6 +32,7 @@ namespace Urban_Planning.Planner
             _dateConstructed = DateTime.Now;
             Volume = Width * Depth * (3 * Stories);
 
+            Console.WriteLine($"Building: {Name}");
             Console.WriteLine($"{_address} ----------");
             Console.WriteLine($"Designed by {_designer}");
             Console.WriteLine($"Constructed on {_dateConstructed}");

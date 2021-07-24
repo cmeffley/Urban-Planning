@@ -8,10 +8,9 @@ namespace Urban_Planning
         static void Main(string[] args)
         {
 
-         
             Console.WriteLine("Urban Planner");
 
-            Building Building2 = new Building("123 Construction Lane")
+            Building Building2 = new Building("This Old House", "123 Construction Lane")
             {
                 Stories = 10,
                 Width = 25,
@@ -21,7 +20,7 @@ namespace Urban_Planning
             Building2.Construct();
             Building2.Purchase("Bob Villa");
 
-            Building Building3 = new Building("4643 Flannel Blvd")
+            Building Building3 = new Building("Guest House", "4643 Flannel Blvd")
             {
                 Stories = 7,
                 Width = 30,
@@ -31,7 +30,7 @@ namespace Urban_Planning
             Building3.Construct();
             Building3.Purchase("Al Borland");
 
-            Building Building4 = new Building("7859 Descruction Ave")
+            Building Building4 = new Building("Hospital", "7859 Descruction Ave")
             {
                 Stories = 6,
                 Width = 35,
@@ -42,7 +41,12 @@ namespace Urban_Planning
             Building4.Purchase("Tim Taylor");
 
 
+            City newCity = new City("Gotham", "Batman", 1940);
+            newCity.AddBuilding(Building4);
+            newCity.AddBuilding(Building3);
+            newCity.AddBuilding(Building2);
 
+            newCity.ShowBuildings();
         }
     }
 }
